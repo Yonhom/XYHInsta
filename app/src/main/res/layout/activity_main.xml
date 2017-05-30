@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main_drawer_layout"
     tools:context="com.xuyonghong.xyhinsta.MainActivity">
 
     <!-- the drawer layout -->
@@ -24,17 +25,26 @@
             app:layout_constraintTop_toTopOf="parent"
             android:background="@android:color/holo_blue_dark"
             android:translationZ="5dp"
-            android:id="@+id/toolbar" />
+            android:id="@+id/main_toolbar">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_toolbar_logo"
+                android:layout_gravity="center"
+                />
+        </android.support.v7.widget.Toolbar>
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/main_content"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/main_toolbar" />
 
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/take_pic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@id/main_ui"
