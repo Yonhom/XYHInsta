@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/parent">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image_user"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -55,37 +55,38 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
-            android:text="TextView"
+            android:text="What a wonderful day! Me and my buddy are driving our kick-ass bike with speed limit! Everything is a blury! This is a picture my GoPro took, hope you guys like it! "
+            android:textSize="15sp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="@+id/parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_image_view"
             tools:text="What a wonderful day! Me and my buddy are driving our kick-ass bike with speed limit! Everything is a blury! This is a picture my GoPro took, hope you guys like it!" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/btn_like"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/ic_heart_outline_grey"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:srcCompat="@drawable/ic_heart_outline_grey" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/btn_look_up_comment"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/btn_like"
             app:srcCompat="@drawable/ic_comment_outline_grey" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/btn_more"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -96,7 +97,7 @@
             android:id="@+id/like_count_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginRight="8dp"
             android:text="8 Likes"
             android:textSize="20sp"
@@ -107,13 +108,13 @@
             android:id="@+id/like_heart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="0dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/like_count_text"
             app:layout_constraintRight_toLeftOf="@+id/like_count_text"
             app:layout_constraintTop_toTopOf="@+id/like_count_text"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.5"
             app:srcCompat="@drawable/ic_heart_small_blue" />
 
     </android.support.constraint.ConstraintLayout>

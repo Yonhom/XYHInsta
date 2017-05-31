@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,7 +26,7 @@ public class InstaFeedAdapter extends RecyclerView.Adapter<InstaFeedAdapter.Inst
 
     @Override
     public InstaFeedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // parent have to be provided, cause the layout parameter set in the item xml can not implied to parent view!!!
+        // parent have to be provided, the layout parameter set in the item xml can not be implied to parent view if not!!!
         View view = LayoutInflater.from(context).inflate(R.layout.main_feed_item, parent, false);
         InstaFeedViewHolder holder = new InstaFeedViewHolder(view);
         return holder;
@@ -46,7 +45,7 @@ public class InstaFeedAdapter extends RecyclerView.Adapter<InstaFeedAdapter.Inst
 
     static class InstaFeedViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.image_user)
-        ImageButton imageUser;
+        ImageView imageUser;
         @BindView(R.id.text_user)
         TextView textUser;
         @BindView(R.id.main_image_view)
@@ -54,11 +53,11 @@ public class InstaFeedAdapter extends RecyclerView.Adapter<InstaFeedAdapter.Inst
         @BindView(R.id.text_comment)
         TextView textComment;
         @BindView(R.id.btn_like)
-        ImageButton btnLike;
+        ImageView btnLike;
         @BindView(R.id.btn_look_up_comment)
-        ImageButton btnLookupComment;
+        ImageView btnLookupComment;
         @BindView(R.id.btn_more)
-        ImageButton btnMore;
+        ImageView btnMore;
         @BindView(R.id.like_count_text)
         TextView likeCountText;
 
