@@ -1,6 +1,9 @@
 package com.xuyonghong.xyhinsta;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
+
+import com.xuyonghong.xyhinsta.fragment.FeedFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.main_drawer_layout)
     DrawerLayout mDrawerLayout;
+
+    @BindView(R.id.main_content_container)
+    FrameLayout mMainContentContainer;
 
     private ActionBar actionBarFromToolBar;
 
@@ -60,6 +69,24 @@ public class MainActivity extends AppCompatActivity {
         // cause we already designated a logo, so we disable the default toolbar title
         actionBarFromToolBar.setDisplayShowTitleEnabled(false);
 
+        //set the main content
+        FeedFragment feedFragment = new FeedFragment();
+        String feedFragmentTag = FeedFragment.class.getSimpleName();
+        loadFramgent(feedFragment, feedFragmentTag);
+
+    }
+
+    /**
+     * load a fragment with tag
+     * @param fragment
+     * @param fragmentTag
+     */
+    private void loadFramgent(Fragment fragment, String fragmentTag) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.main_content_container, fragment, fragmentTag);
+        transaction.addToBackStack(fragmentTag);
+        transaction.commit();
     }
 
     @Override
