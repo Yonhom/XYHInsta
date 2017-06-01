@@ -7,10 +7,6 @@
     android:id="@+id/main_drawer_layout"
     tools:context="com.xuyonghong.xyhinsta.MainActivity">
 
-    <!-- the drawer layout -->
-    <include android:id="@+id/main_drawer"
-        layout="@layout/drawer_layout"/>
-
     <!-- the main ui -->
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -56,5 +52,11 @@
             android:layout_gravity="bottom|end"/>
 
     </android.support.design.widget.CoordinatorLayout>
+
+    <!-- the drawer layout --> <!-- notice that the NavigationView is placed at last, so it will be
+    rendered last, and get the touch event before the main ui. If not, the navigationView will not receive
+    the event!!!-->
+    <include android:id="@+id/main_drawer"
+        layout="@layout/drawer_layout"/>
 
 </android.support.v4.widget.DrawerLayout>
